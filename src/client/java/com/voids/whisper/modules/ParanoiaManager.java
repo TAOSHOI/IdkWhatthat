@@ -12,9 +12,10 @@ public class ParanoiaManager {
     public static final float MAX_PARANOIA = 100.0f;
 
     // Отсутствие магических чисел
-    private static final float PARANOIA_BASE_RATE = 0.001f;
-    private static final float PARANOIA_DARKNESS_RATE = 0.005f;
-    private static final float PARANOIA_UNDERGROUND_RATE = 0.002f;
+    // Замени эти три строчки в ParanoiaManager.java
+    private static final float PARANOIA_BASE_RATE = 0.0002f; // Было 0.001
+    private static final float PARANOIA_DARKNESS_RATE = 0.001f; // Было 0.005
+    private static final float PARANOIA_UNDERGROUND_RATE = 0.0005f; // Было 0.002
     private static final int UNDERGROUND_THRESHOLD_Y = 0;
     private static final int DARKNESS_THRESHOLD = 5;
     private static final int SAVE_INTERVAL_TICKS = 1200; // 1 минута при 20 TPS

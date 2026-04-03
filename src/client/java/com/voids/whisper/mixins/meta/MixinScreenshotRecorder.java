@@ -24,41 +24,26 @@ public class MixinScreenshotRecorder {
         NativeImage image = cir.getReturnValue();
         if (image != null && ParanoiaManager.getParanoia() > ParanoiaSettings.MIN_PARANOIA_FOR_CURSED_F2) {
             if (RANDOM.nextDouble() < ParanoiaSettings.CURSED_F2_CHANCE) {
-                corruptImageAggressively(image);
-            }
-        }
-    }
+                // Если сработало, жестоко ломаем пиксели
+                int w = image.getWidth();
+                int h = image.getHeight();
 
-    private static void corruptImageAggressively(NativeImage image) {
-        int width = image.getWidth();
-        int height = image.getHeight();
-
-        // 1. Рисуем черные горизонтальные "рваные" полосы (VHS эффект)
-        int numBands = 5 + RANDOM.nextInt(10);
-        for (int b = 0; b < numBands; b++) {
-            int bandY = RANDOM.nextInt(height);
-            int bandHeight = 5 + RANDOM.nextInt(30);
-
-            for (int y = bandY; y < Math.min(height, bandY + bandHeight); y++) {
-                for (int x = 0; x < width; x++) {
-                    if (RANDOM.nextFloat() < 0.9f) {
-                        image.setColor(x, y, 0xFF000000); // Полностью черный
+                // Рисуем огромные красные "глаза" и битые черно-красные полосы прямо поверх матрицы
+                for (int y = 0; y < h; y += 10) {
+                    for (int x = 0; x < w; x++) {
+                        if (RANDOM.nextFloat() < 0.3f) {
+                            image.setColor(x, y, 0xFF000000); // Черный шум
+                        }
                     }
                 }
-            }
-        }
 
-        // 2. Огромный черный силуэт по центру
-        int startX = (int) (width * 0.4);
-        int startY = (int) (height * 0.2);
-        int endX = startX + (int) (width * 0.2);
-        int endY = startY + (int) (height * 0.6);
-
-        for (int x = startX; x < endX; x++) {
-            for (int y = startY; y < endY; y++) {
-                // Плотность силуэта больше к центру
-                if (RANDOM.nextFloat() < 0.95f) {
-                    image.setColor(x, y, 0xFF050505);
+                // Жуткий силуэт по центру
+                int sx = (int)(w * 0.4);
+                int sy = (int)(h * 0.2);
+                for(int y = sy; y < sy + (h/2); y++) {
+                    for(int x = sx; x < sx + (w/4); x++) {
+                        image.setColor(x, y, 0xFF050505);
+                    }
                 }
             }
         }

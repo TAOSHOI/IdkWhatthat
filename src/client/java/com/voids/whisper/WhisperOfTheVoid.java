@@ -43,5 +43,9 @@ public class WhisperOfTheVoid implements ClientModInitializer {
 
         // 5. Иллюзия мультиплеера
         FakeFriendsManager.init();
+        EchoStepsManager.init();
+        HivemindManager.init();
+        SchizoSubtitlesManager.init();
+        // InventoryGaslightManager инициализировать не нужно, у него статичный метод
     }
 }
