@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "whisper_of_the_void",
+  "version": "1.1.0Dev",
+  "name": "Whisper of the Void",
+  "description": "Client-Side Paranoia Engine",
+  "authors": [ "Void" ],
+  "contact": {},
+  "license": "All Rights Reserved",
+  "icon": "assets/whisper_of_the_void/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client":[ "com.voids.whisper.WhisperOfTheVoid" ]
+  },
+  "mixins":[ "whisper.mixins.json" ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

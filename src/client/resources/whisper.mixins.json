@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.voids.whisper.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "client":[
+    "ui.MixinTitleScreen"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
