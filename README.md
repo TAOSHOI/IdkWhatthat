@@ -1,3 +1,5 @@
+<img width="1024" height="512" alt="icon" src="https://github.com/user-attachments/assets/d8610bbe-7d40-49ed-908e-3bb188723d19" />
+
 # Whisper of the Void
 
 Whisper of the Void is a specialized client-side psychological horror modification for Minecraft. It does not add new blocks, items, or monsters. Instead, it focuses on the inherent loneliness of the game, transforming it into a persistent state of unease.
@@ -15,7 +17,7 @@ The core of the experience is an invisible tracking system. The engine monitors 
 *   Total time spent in the current session.
 *   Depth (Y-level).
 *   Light levels in your immediate vicinity.
-
+  
 As your paranoia level rises, the world begins to lose its consistency. The mod utilizes advanced techniques to distort your perception of audio, visual rendering, and the game’s user interface.
 
 ## Trust Nothing
@@ -36,6 +38,7 @@ If you suspect the game is malfunctioning or displaying impossible information, 
 1. Ensure you have the Fabric Loader installed for a compatible version of Minecraft.
 2. Place the Fabric API jar into your mods folder.
 3. Place the Whisper of the Void jar into your mods folder.
+
 4. Launch the game.
 
 ## Disclaimer
